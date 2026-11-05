@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>MoKhoaBootloader</AssemblyName>
+    <RootNamespace>MoKhoaBootloader</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon />
+    <Nullable>disable</Nullable>
+    <Deterministic>true</Deterministic>
+    <DebugType>none</DebugType>
+    <NoWarn>$(NoWarn);CS0649</NoWarn>
+  </PropertyGroup>
+
+  <!-- ĐÓNG GÓI ĐẦY ĐỦ 100% CÔNG CỤ ADB, FASTBOOT, DRIVER, EXPLOIT, LK.BIN -->
+  <ItemGroup>
+    <Compile Remove="tests\**\*.cs" />
+    <EmbeddedResource Include="data\adb.exe" LogicalName="adb.exe" />
+    <EmbeddedResource Include="data\AdbWinApi.dll" LogicalName="AdbWinApi.dll" />
+    <EmbeddedResource Include="data\AdbWinUsbApi.dll" LogicalName="AdbWinUsbApi.dll" />
+    <EmbeddedResource Include="data\fastboot.exe" LogicalName="fastboot.exe" />
+    <EmbeddedResource Include="data\fastboot_flash.exe" LogicalName="fastboot_flash.exe" />
+    <EmbeddedResource Include="data\android_driver_installer.exe" LogicalName="android_driver_installer.exe" />
+    <EmbeddedResource Include="data\libcve98260.so" LogicalName="libcve98260.so" />
+    <EmbeddedResource Include="data\profile.blob" LogicalName="profile.blob" />
+    <EmbeddedResource Include="data\lk.bin" LogicalName="lk.bin" />
+  </ItemGroup>
+
+</Project>

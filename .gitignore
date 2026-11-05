@@ -1,0 +1,27 @@
+# Build outputs and caches
+**/bin/
+**/obj/
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Generated runnable copy
+/MoKhoaBootloader.exe
+/MoKhoaBootloader.exe.config
+
+# Device data and run logs
+**/test-logs/
+**/logs/
+**/backup/
+**/backups/
+*.log
+*.dmp
+
+# Local credentials and signing files
+.env
+.env.*
+*.pfx
+*.p12
+*.keystore
+local.properties
